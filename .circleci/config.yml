@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - checkout
-      
+
       # Download and cache dependencies
       - restore_cache:
         keys:
@@ -26,3 +26,5 @@ jobs:
 
       # run tests!
       - run: yarn test
+      - run: yarn build
+      - run: yarn netlify:deploy
